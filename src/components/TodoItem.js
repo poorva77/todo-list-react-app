@@ -19,7 +19,7 @@ function TodoItem({ task, deleteTask, updateTask }) {
       clearInterval(intervalRef.current);
     }
     return () => clearInterval(intervalRef.current);
-  }, [task.status]);
+  }, [task.status, task, updateTask]);
 
   useEffect(() => {
     setElapsed(task.elapsed || 0);
